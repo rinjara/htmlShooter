@@ -1,0 +1,56 @@
+:root {
+    --primary-text-color: #3A105A;
+    --secondary-text-color: #792372;
+    --accent-color: #FAE006;
+    --main-white: #ffffff;
+    --dark-bg-color: #46319D;
+    --light-bg-color: #9791D8;
+    --transition-duration: 250ms;
+    --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    color: var(--primary-text-color);
+    background-color: var(--light-bg-color);
+    background-image: url("/images/background/beginning.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+    letter-spacing: 0.03em;
+    font-size: larger;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.section {
+    height: 100vh;
+    
+}
+
+/* registration */
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    align-content: center;
+
+    min-height: 500px;
+    padding: 20px;
+    gap: 10px;
+}
+
