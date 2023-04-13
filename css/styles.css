@@ -12,7 +12,7 @@
 body {
     color: var(--primary-text-color);
     background-color: var(--light-bg-color);
-    background-image: url("/images/background/beginning.jpg");
+    background-image: url("../images/background/beginning.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
