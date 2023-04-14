@@ -54,6 +54,20 @@ body {
     gap: 10px;
 }
 
+.starter-btn {
+    padding: 5px;
+    border: var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--secondary-text-color);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    cursor: crosshair;
+}
+
+.starter-btn:hover, .starter-btn:focus {
+    background-color: var(--light-bg-color);
+}
+
 
 /* game */
 .stats {
@@ -75,12 +89,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    position: fixed;
+    transition: right var(--transition-duration) var(--transition-timing-function);
 }
 
 .enemy {
     background-color: transparent;
     border: none;
     cursor: crosshair;
+}
+
+.enemy:hover {
+
+    box-shadow: 0px 2px 30px -3px rgba(255, 13, 5, 1);
 }
 
 .progress-bar {

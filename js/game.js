@@ -39,6 +39,23 @@ function showNotification(title, message) {
   }, 1500);
 }
 
+function updateEnemyPlace() {
+  const enemyRef = document.querySelector('.enemy-wrapper');
+
+  setInterval(() => {
+    const buttonRect = enemyRef.getBoundingClientRect();
+    const newTop = Math.floor(
+      Math.random() * (window.innerHeight - buttonRect.height)
+    );
+    const newLeft = Math.floor(
+      Math.random() * (window.innerWidth - buttonRect.width)
+    );
+
+    enemyRef.style.top = `${newTop}px`;
+    enemyRef.style.left = `${newLeft}px`;
+  }, 2000);
+}
+
 function updateEnemyImage(enemy) {
   document.querySelector('.enemy-img').src = `./images/enemies/${enemy}`;
 }
@@ -62,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const congratsNicknameRef = document.querySelector('.congrats-nick');
   const finalScoreRef = document.querySelector('.final-score');
   let userData;
+
+  updateEnemyPlace();
 
   try {
     userData = JSON.parse(localStorage.getItem('player'));
