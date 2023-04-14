@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shooter</title>
+    <title>Shooter game</title>
     <link
       rel="icon"
       type="image/png"
@@ -33,8 +33,6 @@
         <div>
           <label for="nickname">Nickname</label>
           <input type="text" id="nickname" placeholder="Gandalf" required />
-
-          <!-- placeholder="How should I call you, master?" -->
         </div>
 
         <div>
@@ -52,12 +50,34 @@
           />
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Start the game</button>
       </form>
     </section>
 
-    <section class="game section visually-hidden"></section>
+    <section class="game section visually-hidden">
+      <h2 class="visually-hidden">Defeat your enemy!</h2>
+      <ul class="stats">
+        <li id="nick">Nickname</li>
+        <li id="level">Level: 1</li>
+        <li id="score">Your score: 0</li>
+        <li id="enemy-health">HP: 5</li>
+      </ul>
+
+      <div class="enemy-wrapper">
+        <button type="button" class="enemy" id="enemy">
+          <img src="./images/enemies/bee.png" alt="Enemy" class="enemy-img" />
+        </button>
+
+        <div class="progress-bar">
+          <div class="progress" id="enemyHealthProgress"></div>
+        </div>
+      </div>
+      <div class="gun"></div>
+    </section>
 
     <section class="congrats section visually-hidden"></section>
+
+    <script type="module" src="./js/registration.js"></script>
+    <script src="./js/game.js"></script>
   </body>
 </html>
