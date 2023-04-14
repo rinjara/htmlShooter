@@ -27,7 +27,7 @@
   <body>
     <h1 class="visually-hidden">Try our new html Shooter game!</h1>
 
-    <section class="registration section">
+    <section class="registration section" id="registration">
       <form class="register-form">
         <h2>Create a new account</h2>
         <div>
@@ -54,13 +54,13 @@
       </form>
     </section>
 
-    <section class="game section visually-hidden">
+    <section class="game section visually-hidden" id="game">
       <h2 class="visually-hidden">Defeat your enemy!</h2>
       <ul class="stats">
         <li id="nick">Nickname</li>
         <li id="level">Level: 1</li>
         <li id="score">Your score: 0</li>
-        <li id="enemy-health">HP: 5</li>
+        <li id="enemy-health">Enemy HP: 5</li>
       </ul>
 
       <div class="enemy-wrapper">
@@ -75,9 +75,20 @@
       <div class="gun"></div>
     </section>
 
-    <section class="congrats section visually-hidden"></section>
+    <section class="congrats section visually-hidden" id="congrats">
+      <div class="congrats-card">
+        <h2>Congratulation, master <span class="congrats-nick"></span>!</h2>
+        <p>You defeated all enemies and saved the planet</p>
+        <p>Your score: <span class="final-score"></span></p>
+      </div>
+    </section>
 
-    <script type="module" src="./js/registration.js"></script>
+    <div class="notification" id="notification">
+      <h2 class="notification-title">Notification</h2>
+      <p class="notification-message">This is a notification message.</p>
+    </div>
+
+    <script src="./js/registration.js"></script>
     <script src="./js/game.js"></script>
   </body>
 </html>

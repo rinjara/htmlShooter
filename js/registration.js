@@ -1,7 +1,21 @@
+function showNotification(title, message) {
+  const notificationRef = document.getElementById('notification');
+  const titleRef = document.querySelector('.notification-title');
+  const messageRef = document.querySelector('.notification-message');
+
+  titleRef.textContent = title;
+  messageRef.textContent = message;
+
+  notificationRef.classList.add('show');
+  setTimeout(() => {
+    notificationRef.classList.remove('show');
+  }, 5000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  const registrationSection = document.getElementById('registration');
+  const gameSection = document.getElementById('game');
   const registrationForm = document.querySelector('.register-form');
-  const registrationSection = document.querySelector('.registration');
-  const gameSection = document.querySelector('.game');
 
   registrationForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -22,9 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
       console.error('Set state error: ', error.message);
     }
-
-    alert(`Registration successful! Welcome, ${nickname}.`);
     registrationSection.classList.add('visually-hidden');
     gameSection.classList.remove('visually-hidden');
+
+    showNotification(
+      `Registration successful! Welcome, ${nickname}.`,
+      `It's time to start your journey! Please, defeat this awfull enemies and save our planet from destroy!`
+    );
   });
 });
